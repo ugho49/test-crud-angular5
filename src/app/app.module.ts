@@ -7,6 +7,12 @@ import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {BsDropdownModule, CollapseModule} from 'ngx-bootstrap';
+import { UsersComponent } from './components/users/users.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { AlbumsComponent } from './components/albums/albums.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { PhotosComponent } from './components/photos/photos.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -20,7 +26,13 @@ import {BsDropdownModule, CollapseModule} from 'ngx-bootstrap';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    UsersComponent,
+    PostsComponent,
+    AlbumsComponent,
+    TodosComponent,
+    PhotosComponent,
+    PageNotFoundComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
