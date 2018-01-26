@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './components/app/app.component';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
@@ -17,10 +16,14 @@ import {AlbumService} from './services/album.service';
 import {PostService} from './services/post.service';
 import {UserService} from './services/user.service';
 import {TodoService} from './services/todo.service';
+import {HttpClientModule} from '@angular/common/http';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserCreateComponent } from './components/user-create/user-create.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     CollapseModule.forRoot(),
@@ -35,7 +38,9 @@ import {TodoService} from './services/todo.service';
     AlbumsComponent,
     TodosComponent,
     PhotosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserDetailComponent,
+    UserCreateComponent
   ],
   providers: [PostService, AlbumService, UserService, TodoService],
   bootstrap: [AppComponent]

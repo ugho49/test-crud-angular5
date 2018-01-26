@@ -1,3 +1,22 @@
-<p>
-  users works!
-</p>
+<div class="row">
+  <h3 class="mr-auto">Gestion des utilisateurs</h3>
+  <button (click)="addUser()" class="btn btn-outline-success ml-auto">Ajouter un utilisateur</button>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group">
+      <a (click)="showDetail(user)" class="list-group-item list-group-item-action"
+         [class.active]="selectedUserId === user.id"
+         *ngFor="let user of users">{{ user.username }}</a>
+    </div>
+
+  </div>
+
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

@@ -7,11 +7,23 @@ import {AlbumsComponent} from './components/albums/albums.component';
 import {PostsComponent} from './components/posts/posts.component';
 import {UsersComponent} from './components/users/users.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {UserDetailComponent} from './components/user-detail/user-detail.component';
+import {UserCreateComponent} from './components/user-create/user-create.component';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'users', component: UsersComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [{
+      path: '',
+      children: [
+        { path: 'detail/:idUser', component: UserDetailComponent},
+        { path: 'create', component: UserCreateComponent},
+      ]
+    }]
+  },
   { path: 'posts', component: PostsComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'albums/:idAlbum', component: PhotosComponent },
