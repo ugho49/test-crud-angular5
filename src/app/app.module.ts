@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CollapseModule } from 'ngx-bootstrap';
+import {BsDropdownModule, CollapseModule} from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { CollapseModule } from 'ngx-bootstrap';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   declarations: [
     AppComponent,
