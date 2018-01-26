@@ -13,7 +13,10 @@ import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { PhotosComponent } from './components/photos/photos.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
+import {AlbumService} from './services/album.service';
+import {PostService} from './services/post.service';
+import {UserService} from './services/user.service';
+import {TodoService} from './services/todo.service';
 
 @NgModule({
   imports: [
@@ -34,7 +37,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     PhotosComponent,
     PageNotFoundComponent
   ],
-  providers: [],
+  providers: [PostService, AlbumService, UserService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
