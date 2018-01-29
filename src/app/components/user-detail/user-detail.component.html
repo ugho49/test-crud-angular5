@@ -1,15 +1,10 @@
 <div class="card" *ngIf="user">
   <div class="card-body">
-    <h5 class="card-title">{{ user.name }}</h5>
+    <h5 class="card-title">{{ user.firstname }} {{ user.lastname }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ user.email }}</h6>
 
     <br>
     <table class="table">
-      <tr>
-        <th scope="row" width="100px">Pseudo</th>
-        <td class="detail-row">{{user.username}}</td>
-      </tr>
-
       <tr>
         <th scope="row" width="100px">Phone</th>
         <td class="detail-row">{{user.phone}}</td>
@@ -18,11 +13,7 @@
       <tr *ngIf="user.address">
         <th scope="row" width="100px">Address</th>
         <td class="detail-row">
-          {{user.address.street}} {{user.address.suite}} - {{user.address.zipcode}}
-          <div *ngIf="user.address.geo">
-            <br>
-            <strong><i>({{user.address.geo.lat}} / {{user.address.geo.lng}})</i></strong>
-          </div>
+          {{user.address.street}}- {{user.address.zipcode}}
         </td>
       </tr>
 
@@ -30,15 +21,6 @@
         <th scope="row" width="100px">Website</th>
         <td class="detail-row">
           <a href="{{user.website}}" target="_blank"  class="btn btn-link">{{user.website}}</a>
-        </td>
-      </tr>
-
-      <tr *ngIf="user.company">
-        <th scope="row" width="100px">Company</th>
-        <td class="detail-row">
-          {{user.company.name}}
-          <br>
-          <i>{{user.company.catchPhrase}}</i>
         </td>
       </tr>
     </table>

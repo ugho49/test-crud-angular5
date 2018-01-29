@@ -27,9 +27,7 @@ export class UsersComponent implements OnInit {
 
     if (this.route.firstChild) {
       this.route.firstChild.paramMap.subscribe((params: ParamMap) => {
-        if (params) {
-          this.selectedUserId = +params.get('idUser');
-        }
+        this.selectedUserId = +params.get('idUser');
       });
     }
   }
