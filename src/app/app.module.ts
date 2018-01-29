@@ -19,6 +19,7 @@ import {TodoService} from './services/todo.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserCreateModifyComponent } from './components/user-create-modify/user-create-modify.component';
+import { UserSearchFilterPipe } from './pipes/user-search-filter.pipe';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { UserCreateModifyComponent } from './components/user-create-modify/user-
     PhotosComponent,
     PageNotFoundComponent,
     UserDetailComponent,
-    UserCreateModifyComponent
+    UserCreateModifyComponent,
+    UserSearchFilterPipe
   ],
   providers: [PostService, AlbumService, UserService, TodoService],
   bootstrap: [AppComponent]

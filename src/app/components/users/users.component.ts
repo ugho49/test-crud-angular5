@@ -10,6 +10,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
+  searchFilter: String;
   users: User[] = [];
   selectedUser: User;
 

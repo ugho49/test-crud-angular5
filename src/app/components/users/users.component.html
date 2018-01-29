@@ -7,12 +7,12 @@
 
 <div class="row">
   <div class="col-md-3">
-    <input type="text" class="form-control" placeholder="Recherche">
+    <input type="text" class="form-control" placeholder="Recherche" [(ngModel)]="searchFilter">
     <br>
     <div class="list-group user-list">
       <a (click)="showDetail(user)" class="list-group-item list-group-item-action"
          [class.active]="selectedUser === user"
-         *ngFor="let user of users">{{ user.firstname }} {{ user.lastname }}</a>
+         *ngFor="let user of users | userSearchFilter: searchFilter ">{{ user.firstname }} {{ user.lastname }}</a>
     </div>
   </div>
 

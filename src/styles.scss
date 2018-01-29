@@ -14,14 +14,16 @@
   }
 }
 
-.form-control {
-  &.ng-touched {
-    &.ng-invalid {
-      @extend .is-invalid;
-    }
+form {
+  .form-control {
+    &.ng-touched {
+      &.ng-invalid {
+        @extend .is-invalid;
+      }
 
-    &.ng-valid {
-      @extend .is-valid;
+      &.ng-valid {
+        @extend .is-valid;
+      }
     }
   }
 }
