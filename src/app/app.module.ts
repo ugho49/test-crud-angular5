@@ -18,7 +18,7 @@ import {UserService} from './services/user.service';
 import {TodoService} from './services/todo.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { UserCreateComponent } from './components/user-create/user-create.component';
+import { UserCreateModifyComponent } from './components/user-create-modify/user-create-modify.component';
 
 @NgModule({
   imports: [
@@ -40,7 +40,7 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
     PhotosComponent,
     PageNotFoundComponent,
     UserDetailComponent,
-    UserCreateComponent
+    UserCreateModifyComponent
   ],
   providers: [PostService, AlbumService, UserService, TodoService],
   bootstrap: [AppComponent]

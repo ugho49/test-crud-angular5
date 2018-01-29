@@ -28,10 +28,6 @@ export class UserDetailComponent implements OnInit {
     });
   }
 
-  editUser() {
-    console.log("edit user");
-  }
-
   deleteUser() {
     console.log("delete user");
   }

@@ -46,7 +46,7 @@
     <br>
 
     <div class="text-right">
-      <a (click)="editUser()" class="card-link text-primary">Modifier</a>
+      <a [routerLink]="['/update-user', user.id]" class="card-link text-primary">Modifier</a>
       <a (click)="deleteUser()" class="card-link text-danger">Supprimer</a>
     </div>
   </div>

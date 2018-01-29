@@ -25,8 +25,8 @@ export class UsersComponent implements OnInit {
       }
     );
 
-    if (this.route.firstChild.firstChild) {
-      this.route.firstChild.firstChild.paramMap.subscribe((params: ParamMap) => {
+    if (this.route.firstChild) {
+      this.route.firstChild.paramMap.subscribe((params: ParamMap) => {
         if (params) {
           this.selectedUserId = +params.get('idUser');
         }
@@ -36,12 +36,7 @@ export class UsersComponent implements OnInit {
 
   showDetail(user: User) {
     this.selectedUserId = user.id;
-    this.router.navigate(['/users/detail', user.id]);
-  }
-
-  addUser() {
-    this.selectedUserId = null;
-    this.router.navigate(['/users/create']);
+    this.router.navigate(['/users', user.id]);
   }
 
 }
