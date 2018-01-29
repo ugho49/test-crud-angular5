@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {BsDropdownModule, CollapseModule} from 'ngx-bootstrap';
+import {BsDropdownModule, CollapseModule, ModalModule} from 'ngx-bootstrap';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { AlbumsComponent } from './components/albums/albums.component';
@@ -27,6 +27,7 @@ import { UserCreateModifyComponent } from './components/user-create-modify/user-
     FormsModule,
     AppRoutingModule,
     CollapseModule.forRoot(),
+    ModalModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
   declarations: [

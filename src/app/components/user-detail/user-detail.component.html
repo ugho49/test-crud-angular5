@@ -1,3 +1,22 @@
+<div bsModal #confirmModal="bs-modal" class="modal fade modal-danger"
+     tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirmation</h4>
+        <button type="button" class="close" (click)="confirmModal.hide()"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="deleteUser()">Supprimer l'utilisateur</button>
+        <button type="button" class="btn btn-secondary" (click)="confirmModal.hide()">Annuler</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="card" *ngIf="user">
   <div class="card-body">
     <h5 class="card-title">{{ user.firstname }} {{ user.lastname }}</h5>
@@ -29,7 +48,7 @@
 
     <div class="text-right">
       <a [routerLink]="['/update-user', user.id]" class="card-link text-primary">Modifier</a>
-      <a (click)="deleteUser()" class="card-link text-danger">Supprimer</a>
+      <a (click)="confirmModal.show()" class="card-link text-danger">Supprimer</a>
     </div>
   </div>
 </div>

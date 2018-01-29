@@ -13,15 +13,10 @@ import {UserCreateModifyComponent} from './components/user-create-modify/user-cr
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  {
-    path: 'users',
-    component: UsersComponent,
-    children: [
-      { path: ':idUser', component: UserDetailComponent}
-    ]
-  },
-  { path: 'update-user/:idUser', component: UserCreateModifyComponent},
-  { path: 'create-user', component: UserCreateModifyComponent},
+  { path: 'users', component: UsersComponent },
+  { path: 'users/:idUser', component: UsersComponent },
+  { path: 'update-user/:idUser', component: UserCreateModifyComponent },
+  { path: 'create-user', component: UserCreateModifyComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'albums/:idAlbum', component: PhotosComponent },

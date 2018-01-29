@@ -11,15 +11,15 @@
     <br>
     <div class="list-group user-list">
       <a (click)="showDetail(user)" class="list-group-item list-group-item-action"
-         [class.active]="selectedUserId === user.id"
+         [class.active]="selectedUser === user"
          *ngFor="let user of users">{{ user.firstname }} {{ user.lastname }}</a>
     </div>
   </div>
 
   <div class="col-md-9">
-    <router-outlet></router-outlet>
+    <app-user-detail *ngIf="selectedUser" [user]="selectedUser" (deleteUser)="deleteUser()"></app-user-detail>
 
-    <section class="jumbotron text-center no-user-select" *ngIf="!selectedUserId">
+    <section class="jumbotron text-center no-user-select" *ngIf="!selectedUser">
       <div class="container">
         <h1 class="jumbotron-heading">Consultation d'un utilisateur</h1>
         <p class="lead text-muted">Si vous voulez consulter un utilisateur, cliquer sur celui de votre choix dans la liste à gauche.</p>

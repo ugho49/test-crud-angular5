@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../classes/user';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
@@ -11,7 +11,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class UsersComponent implements OnInit {
 
   users: User[] = [];
-  selectedUserId: number;
+  selectedUser: User;
 
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
@@ -19,22 +19,40 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers().subscribe(
       res => {
         this.users = res;
+
+        this.route.paramMap.subscribe((params: ParamMap) => {
+          const selectedUserId = +params.get('idUser');
+
+          if (selectedUserId) {
+            this.users.forEach(u => {
+              if (u.id === selectedUserId) {
+                this.selectedUser = u;
+              }
+            });
+          }
+        });
       },
       err => {
         console.error(err);
       }
     );
-
-    if (this.route.firstChild) {
-      this.route.firstChild.paramMap.subscribe((params: ParamMap) => {
-        this.selectedUserId = +params.get('idUser');
-      });
-    }
   }
 
   showDetail(user: User) {
-    this.selectedUserId = user.id;
+    this.selectedUser = user;
     this.router.navigate(['/users', user.id]);
   }
 
+  deleteUser() {
+    this.userService.deleteUser(this.selectedUser.id).subscribe(
+      res => {
+        this.router.navigate(['/users']);
+        this.users = this.users.filter(u => u.id !== this.selectedUser.id);
+        this.selectedUser = null;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+  }
 }
