@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserCreateModifyComponent } from './components/user-create-modify/user-create-modify.component';
 import { UserSearchFilterPipe } from './pipes/user-search-filter.pipe';
+import {CalendarComponent} from './components/calendar/calendar.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { UserSearchFilterPipe } from './pipes/user-search-filter.pipe';
   declarations: [
     AppComponent,
     HomeComponent,
+    CalendarComponent,
     NavbarComponent,
     UsersComponent,
     PostsComponent,

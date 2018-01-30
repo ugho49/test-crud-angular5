@@ -9,6 +9,7 @@ import {UsersComponent} from './components/users/users.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {UserDetailComponent} from './components/user-detail/user-detail.component';
 import {UserCreateModifyComponent} from './components/user-create-modify/user-create-modify.component';
+import {CalendarComponent} from './components/calendar/calendar.component';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'albums', component: AlbumsComponent },
   { path: 'albums/:idAlbum', component: PhotosComponent },
   { path: 'todos', component: TodosComponent },
+  { path: 'calendar', component: CalendarComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
